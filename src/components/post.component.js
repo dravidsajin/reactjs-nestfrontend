@@ -1,4 +1,4 @@
-import Reach, {Component} from 'react';
+import React, {Component} from 'react';
 export default class Posts extends Component{
 
     constructor(props){
@@ -8,7 +8,7 @@ export default class Posts extends Component{
     render(){
         return(
             <div>
-                
+
             </div>
         );
     }

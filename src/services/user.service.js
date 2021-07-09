@@ -12,8 +12,11 @@ class UserService{
         });
     }
 
-    register(){
-
+    register(userdata){
+        return axios.post("/user/createuser", userdata).
+        then(result => {                                                                                         
+            return result;
+        });
     }
 
     logout(){

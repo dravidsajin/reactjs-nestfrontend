@@ -29,10 +29,11 @@ export default class Login extends Component{
             UserService.login(logindata).then(
                 () => {
                     console.log("===getting in");             
-                    window.location.reload();
+                    // window.location.reload();
+                    this.props.history.push("/Profile");
                 },
                 error => {
-                    if(error && error.response && error.response.data &&error.response.data.message){
+                    if(error && error.response && error.response.data && error.response.data.message){
                         this.setState({disableSubmit: false});
                         this.setState({loginMessage: error.response.data.message});                    
                     }

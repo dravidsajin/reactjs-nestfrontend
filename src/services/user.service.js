@@ -12,7 +12,7 @@ class UserService{
         });
     }
 
-    register(userdata){
+    register(userdata){        
         return axios.post("/user/createuser", userdata).
         then(result => {                                                                                         
             return result;
@@ -24,10 +24,16 @@ class UserService{
     }
 
     getLoggedUser(accesstoken){
-        let authorization = {
-            headers: { Authorization: `Bearer ${accesstoken}` } 
-        }
+        let authorization = { headers: { Authorization: `Bearer ${accesstoken}` } };
         return axios.get('/user/profile',authorization).
+        then(response => {
+            return response;
+        });
+    }
+
+    updateProfile(userdata, accesstoken){
+        let authorization = { headers: { Authorization: `Bearer ${accesstoken}` } };
+        return axios.patch('/user/updateuser',userdata,authorization).
         then(response => {
             return response;
         });

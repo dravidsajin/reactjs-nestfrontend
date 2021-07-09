@@ -83,7 +83,7 @@ export default class Register extends Component{
 
                     <Form.Group className="mb-3 FormGroup" controlId="firstname">
                         <Form.Label>Firstname</Form.Label>
-                        <Form.Control type="text" placeholder="Enter firstname" size="sm" onChange={this.handleChange.bind(this,'firstname')} isInvalid={ !!this.state.errors.firstname } />                           
+                        <Form.Control type="text" placeholder="Enter firstname" size="sm" onKeyUp={this.handleChange.bind(this,'firstname')} isInvalid={ !!this.state.errors.firstname } />                           
 
                         <Form.Control.Feedback type='invalid'>
                             { this.state.errors.firstname }
@@ -92,7 +92,7 @@ export default class Register extends Component{
 
                     <Form.Group className="mb-3 FormGroup" controlId="lastname">
                         <Form.Label>Lastname</Form.Label>
-                        <Form.Control type="text" placeholder="Enter lastname" size="sm" onChange={this.handleChange.bind(this,'lastname')} isInvalid={ !!this.state.errors.lastname } />   
+                        <Form.Control type="text" placeholder="Enter lastname" size="sm" onKeyUp={this.handleChange.bind(this,'lastname')} isInvalid={ !!this.state.errors.lastname } />   
 
                         <Form.Control.Feedback type='invalid'>
                             { this.state.errors.lastname }
@@ -101,7 +101,7 @@ export default class Register extends Component{
 
                     <Form.Group className="mb-3 FormGroup" controlId="email">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="text" placeholder="Enter email" size="sm" onChange={this.handleChange.bind(this,'email')} isInvalid={ !!this.state.errors.email } /> 
+                        <Form.Control type="text" placeholder="Enter email" size="sm" onKeyUp={this.handleChange.bind(this,'email')} isInvalid={ !!this.state.errors.email } /> 
 
                         <Form.Control.Feedback type='invalid'>
                             { this.state.errors.email }
@@ -110,7 +110,7 @@ export default class Register extends Component{
 
                     <Form.Group className="mb-3 FormGroup" controlId="password">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Enter password" size="sm" onChange={this.handleChange.bind(this,'password')} isInvalid={ !!this.state.errors.password } />
+                        <Form.Control type="password" placeholder="Enter password" size="sm" onKeyUp={this.handleChange.bind(this,'password')} isInvalid={ !!this.state.errors.password } />
 
                         <Form.Control.Feedback type='invalid'>
                             { this.state.errors.password }
@@ -119,7 +119,7 @@ export default class Register extends Component{
 
                     <Form.Group className="mb-3 FormGroup" controlId="mobilenumber">
                         <Form.Label>Mobile Number</Form.Label>
-                        <Form.Control type="text" placeholder="Enter mobilenumber" size="sm" onChange={this.handleChange.bind(this,'mobilenumber')} isInvalid={ !!this.state.errors.mobilenumber } />
+                        <Form.Control type="text" placeholder="Enter mobilenumber" size="sm" onKeyUp={this.handleChange.bind(this,'mobilenumber')} isInvalid={ !!this.state.errors.mobilenumber } />
 
                         <Form.Control.Feedback type='invalid'>
                             { this.state.errors.mobilenumber }
@@ -128,7 +128,7 @@ export default class Register extends Component{
                     
                     <Form.Group className="mb-3 FormGroup" controlId="gender">
                         <Form.Label>Gender</Form.Label>
-                        <Form.Control as="select" size="sm" ref={this.gender} onChange={this.handleChange.bind(this,'gender')}>
+                        <Form.Control as="select" size="sm" ref={this.gender} onKeyUp={this.handleChange.bind(this,'gender')}>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </Form.Control>

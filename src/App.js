@@ -11,6 +11,7 @@ import Login from './components/login.component';
 import Register from './components/register.component';
 import Posts from './components/post.component';
 import Profile from './components/profile.component'
+import Addpost from './components/addpost.component'
 
 class App extends Component {
 
@@ -72,6 +73,13 @@ class App extends Component {
               }
               {this.state.userDetails != null && 
                 <li className="nav-item">
+                  <Link to={"/addpost"} className="nav-link">
+                    Post
+                  </Link>
+                </li>
+              }
+              {this.state.userDetails != null && 
+                <li className="nav-item">
                   <Link to={"/Profile"} className="nav-link">
                     Profile
                   </Link>
@@ -92,6 +100,7 @@ class App extends Component {
               <Route exact path={["/register"]} component={Register} />
               <Route exact path={["/", "/posts"]} component={Posts} /> 
               <Route exact path={["/profile"]} component={Profile} />
+              <Route exact path={["/addpost"]} component={Addpost} />
             </Switch>
           </div>
       </div>

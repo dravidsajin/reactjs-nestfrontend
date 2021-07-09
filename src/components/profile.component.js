@@ -63,7 +63,7 @@ export default class Profile extends Component{
                 },
                 error => {
                     if(error && error.response && error.response.data && error.response.data.message){
-                        this.setState({disableSubmit: false, registrationerr: error.response.data.message});                     
+                        this.setState({disableSubmit: false, profileError: error.response.data.message});                     
                     }
                 }
                 );

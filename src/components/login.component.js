@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import UserService from '../services/user.service';
+import * as constants from '../constants/constants';
 
 export default class Login extends Component{
     constructor(props){
@@ -12,7 +13,9 @@ export default class Login extends Component{
             invalidemail: null,
             disableSubmit: false,
             loginMessage: null
-        };        
+        };
+        // console.log(constants.baseurl);
+        this.baseurl = constants.baseurl;        
     }
     LoginSubmit(event){
         event.preventDefault();
@@ -28,9 +31,8 @@ export default class Login extends Component{
 
             UserService.login(logindata).then(
                 () => {
-                    console.log("===getting in");             
-                    // window.location.reload();
-                    this.props.history.push("/Profile");
+                    console.log("===getting in");                                 
+                    window.location.href = this.baseurl+ "Profile";                    
                 },
                 error => {
                     if(error && error.response && error.response.data && error.response.data.message){

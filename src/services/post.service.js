@@ -9,6 +9,13 @@ class PostService{
             return response;
         });
     }
+
+    getPost(accesstoken, pageno){
+        let authorization = { headers: { Authorization: `Bearer ${accesstoken}` } };
+        return axios.get("/posts/getAll/"+pageno+"", authorization).then(response => {
+            return response;
+        });
+    }
 }
 
 export default new PostService();
